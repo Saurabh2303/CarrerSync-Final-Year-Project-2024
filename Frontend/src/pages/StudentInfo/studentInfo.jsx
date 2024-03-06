@@ -1075,6 +1075,6 @@ function ProjectSubmissionForm() {
       </form>
     </div>
   );
-}
+  }
 
 export default ProjectSubmissionForm;
