@@ -39,8 +39,12 @@ app.get("/message", (req, res) => {
   res.send("Hello World Message");
 });
 
-app.get("/getUsers",
-);
+app.get("/getUsers", (req, res) => {
+  //yet aapn query chalvt aahe
+  UserModel.find()
+    .then((users) => res.json(users))
+    .catch((err) => res.json(err));
+});
 
 // Use body-parser middleware to parse JSON bodies
 // app.use(bodyParser.json());
