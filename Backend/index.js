@@ -1,11 +1,11 @@
 // Import express
-const express = require('express');
+const express = require("express");
 // Import mongoose
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 // Import body-parser to parse request bodies
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 // Import routes
-const yourRoutes = require('./routes/yourRoutes');
+// const yourRoutes = require('./routes/yourRoutes');
 
 // Initialize express app
 const app = express();
@@ -14,15 +14,16 @@ const app = express();
 app.use(bodyParser.json());
 
 // Database connection URL from MongoDB Atlas or local MongoDB server
-const dbURI = 'your_mongodb_connection_string_here';
+const dbURI = "your_mongodb_connection_string_here";
 
 // Connect to MongoDB
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.log(err));
+mongoose
+  .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.log(err));
 
 // Use routes
-app.use('/api/yourEndpoint', yourRoutes);
+// app.use("/api/yourEndpoint", yourRoutes);
 
 // Define a port
 const PORT = process.env.PORT || 5000;
